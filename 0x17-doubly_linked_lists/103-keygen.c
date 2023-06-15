@@ -11,7 +11,7 @@
 
 void generateKey(char *username)
 {
-printf("Key for %s: %s\n", username, generatedKey);
+printf("Key for %s: %s\n", username, generateKey);
 }
 
 /**
