@@ -19,6 +19,6 @@ while (h != NULL)
 node_count++;
 h = h->next;
 }
-    
+
 return (node_count);
 }
