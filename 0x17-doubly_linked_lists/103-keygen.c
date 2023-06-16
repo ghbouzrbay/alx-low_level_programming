@@ -14,9 +14,9 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 char password[7];
 char *charset;
-charset = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 int input_length = strlen(argv[1]);
 int i, temp;
+charset = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 temp = (input_length ^ 59) & 63;
 password[0] = charset[temp];
 temp = 0;
