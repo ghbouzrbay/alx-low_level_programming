@@ -11,7 +11,7 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-char password[7], *codex;
+char password[7], *crypto;
 int len = strlen(argv[1]), i, tmp;
 
 crypto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
