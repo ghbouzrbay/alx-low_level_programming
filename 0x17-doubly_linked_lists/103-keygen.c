@@ -9,45 +9,48 @@
  *
  * Return: Always 0.
  */
-int main(int __attribute__((__unused__)) argc, char *argv[])
+
+int main(int argc, char *argv[])
 {
-char password[7], *crypto;
-int len = strlen(argv[1]), i, tmp;
+char password[7];
+char *charset = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+int input_length = strlen(argv[1]);
+int i, temp;
 
-crypto = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+temp = (input_length ^ 59) & 63;
+password[0] = charset[temp];
 
-tmp = (len ^ 59) & 63;
-password[0] = crypto[tmp];
+temp = 0;
+for (i = 0; i < input_length; i++)
+temp += argv[1][i];
+password[1] = charset[(temp ^ 79) & 63];
 
-tmp = 0;
-for (i = 0; i < len; i++)
-tmp += argv[1][i];
-password[1] = crypto[(tmp ^ 79) & 63];
+temp = 1;
+for (i = 0; i < input_length; i++)
+temp *= argv[1][i];
+password[2] = charset[(temp ^ 85) & 63];
 
-tmp = 1;
-for (i = 0; i < len; i++)
-tmp *= argv[1][i];
-password[2] = crypto[(tmp ^ 85) & 63];
-
-tmp = 0;
-for (i = 0; i < len; i++)
+temp = 0;
+for (i = 0; i < input_length; i++)
 {
-if (argv[1][i] > tmp)
-tmp = argv[1][i];
+if (argv[1][i] > temp)
+temp = argv[1][i];
 }
-srand(tmp ^ 14);
-password[3] = crypto[rand() & 63];
+srand(temp ^ 14);
+password[3] = charset[rand() & 63];
 
-tmp = 0;
-for (i = 0; i < len; i++)
-tmp += (argv[1][i] * argv[1][i]);
-password[4] = crypto[(tmp ^ 239) & 63];
+temp = 0;
+for (i = 0; i < input_length; i++)
+temp += (argv[1][i] * argv[1][i]);
+password[4] = charset[(temp ^ 239) & 63];
 
 for (i = 0; i < argv[1][0]; i++)
-tmp = rand();
-password[5] = crypto[(tmp ^ 229) & 63];
+temp = rand();
+password[5] = charset[(temp ^ 229) & 63];
 
 password[6] = '\0';
-printf("%s", password);
+
+printf("%s\n", password);
+
 return (0);
 }
