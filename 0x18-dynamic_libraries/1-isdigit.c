@@ -1,16 +1,15 @@
 #include "main.h"
 
 /**
- *_isupper - check if a letter is upper
- *@x: The number to br checked
- *Return: 1 for upper letter or 0 for any else
+ * _isdigit - checks for a digit (0 through 9).
+ * @c: variable to check.
+ *
+ * Return: 1 if @c is a digit, 0 if not.
  */
-
-int _isupper(int x)
+int _isdigit(int c)
 {
-if (x >= 65 && x <= 90)
-{
-return (1);
-}
-return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
