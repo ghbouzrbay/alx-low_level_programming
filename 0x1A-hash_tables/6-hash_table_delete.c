@@ -28,3 +28,4 @@ void hash_table_delete(hash_table_t *ht)
     free(hash_table_head->array);
     free(hash_table_head);
 }
+

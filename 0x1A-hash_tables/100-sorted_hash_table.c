@@ -174,6 +174,7 @@ void shash_table_print(const shash_table_t *ht)
     printf("}\n");
 }
 
+B
 /**
  * shash_table_print_rev - Prints a sorted hash table in reverse order.
  * @ht: A pointer to the sorted hash table to print.
@@ -225,3 +226,4 @@ void shash_table_delete(shash_table_t *ht)
     free(hash_table_head->array);
     free(hash_table_head);
 }
+

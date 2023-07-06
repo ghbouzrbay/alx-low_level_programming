@@ -25,3 +25,4 @@ ht->array[i] = NULL;
 
 return (ht);
 }
+
