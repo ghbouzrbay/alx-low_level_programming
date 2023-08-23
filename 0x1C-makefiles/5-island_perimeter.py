@@ -16,8 +16,8 @@ def island_perimeter(grid):
         for j in range(b):
             if grid[i][j] == 1:
                 land += 1
-                if i < m - 1 and grid[i+1][j] == 1:
+                if i < a - 1 and grid[i+1][j] == 1:
                     ice += 1
-                if j < n - 1 and grid[i][j + 1] == 1:
+                if j < b - 1 and grid[i][j + 1] == 1:
                     ice += 1
     return land * 4 - 2 * ice
