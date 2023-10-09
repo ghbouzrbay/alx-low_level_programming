@@ -25,7 +25,7 @@ return (search_index(array, 0, size - 1, value));
  * Return: the index where value is located.
  */
 
-int binary_search_index(int *array, size_t l, size_t r, int value)
+int search_index(int *array, size_t l, size_t r, int value)
 {
 int non;
 
@@ -43,7 +43,7 @@ return (non);
 else if (array[non] > value)
 return (search_index(array, l, non - 1, value));
 else
-return (search_index(array, mid + 1, r, value));
+return (search_index(array, non + 1, r, value));
 }
 
 /**
