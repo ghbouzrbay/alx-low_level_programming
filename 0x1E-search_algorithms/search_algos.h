@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <math.h>
 
 /******THE FUNCTIONS OF THE MONDATORY TASKS******/
 
