@@ -60,4 +60,6 @@ skiplist_t *linear_skip(skiplist_t *list, int value);
 /********assisted functions********/
 
 int search_binary(int *array, size_t left, size_t right, int value);
+int recursive_binary(int *array, size_t left, size_t right, int value);
+
 #endif
