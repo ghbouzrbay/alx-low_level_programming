@@ -66,5 +66,5 @@ printf("Value checked array[%ld] = [%d]\n", n, array[n]);
 done = n < size ? n : size - 1;
 printf("Value found between indexes [%ld] and [%ld]\n", n / 2, done);
 
-return(search_binary(array, n / 2, done, value));
+return (search_binary(array, n / 2, done, value));
 }
