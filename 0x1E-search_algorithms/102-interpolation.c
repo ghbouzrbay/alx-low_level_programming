@@ -22,8 +22,8 @@ return (-1);
 
 for (loop = 0, rest = size - 1; rest >= loop;)
 {
-n = (loop + (((double)(rest - loop) /
-		(array[rest] - array[loop])) * (value - array[loop]));)
+n = (loop + (((double)(rest - loop)
+	      / (array[rest] - array[loop])) * (value - array[loop])));
 if (n < size)
 printf("Value checked array[%ld] = [%d]\n", n, array[n]);
 else
